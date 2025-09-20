@@ -25,19 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-subsystem adsp
-    devname uevent_devpath
-    dirname /dev/adsp
-
-subsystem msm_camera
-    devname uevent_devpath
-    dirname /dev/msm_camera
-
-# fix alarm permissions
-/dev/alarm                0664   system     radio
-
 # the DIAG device node is not world writable/readable.
-/dev/diag                 0666   system     diag
+/dev/diag                 0660   system     diag
 
 /dev/genlock              0666   system     system
 /dev/kgsl                 0666   system     system
@@ -142,7 +131,6 @@ subsystem msm_camera
 /dev/adsprpc-smd          0664   system     system
 
 #permissions for audio
-/dev/adsp/*               0660   system     audio
 /dev/audio_slimslave      0660   system     audio
 /dev/msm_qcelp            0660   system     audio
 /dev/msm_evrc             0660   system     audio
@@ -156,14 +144,12 @@ subsystem msm_camera
 /dev/msm_aac_in           0660   system     audio
 /dev/msm_qcelp_in         0660   system     audio
 /dev/msm_evrc_in          0660   system     audio
-/dev/msm_amrnb_in         0660   system     audio
-/dev/msm_amrwb_in         0660   system     audio
+/dev/msm_amrnb_in         0640   system     audio
 /dev/msm_a2dp_in          0660   system     audio
 /dev/msm_ac3              0660   system     audio
 /dev/msm_audio_cal        0660   system     audio
 /dev/msm_cad              0660   system     audio
 /dev/msm_fm               0660   system     audio
-/dev/msm_mp3*             0660   system     audio
 /dev/msm_mvs              0660   system     audio
 /dev/msm_pcm_lp_dec       0660   system     audio
 /dev/msm_preproc_ctl      0660   system     audio

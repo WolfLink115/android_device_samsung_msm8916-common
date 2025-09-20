@@ -1,4 +1,4 @@
-#!/vendor/bin/sh
+#!/system/bin/sh
 
 LOG_TAG="link_telephony_dbs"
 LOG_NAME="${0}:"
